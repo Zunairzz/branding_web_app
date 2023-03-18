@@ -19,7 +19,7 @@ export const CustomNavbar = () => {
 
     return (
         <div>
-            <Navbar fixed="" className="navbar navbar-expand-md navbar-dark bg-dark px-4">
+            <Navbar fixed className="navbar navbar-expand-md navbar-dark px-4">
                 <NavbarBrand to="/">
                 </NavbarBrand>
                 <NavbarToggler onClick={toggle}/>
