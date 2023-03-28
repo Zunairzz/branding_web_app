@@ -9,40 +9,57 @@ import {
     NavLink,
     UncontrolledDropdown
 } from "reactstrap";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.css';
+import "../styles/CustomNavbar.css";
 
 export const CustomNavbar = () => {
+    const [show, setShow] = useState(true);
+    const controlNavbar = () => {
+        if (window.screenY > 0) {
+            setShow(false);
+        } else {
+            setShow(true);
+        }
+    }
+    // new useEffect:
+    useEffect(() => {
+        window.addEventListener('scroll', controlNavbar);
+
+        return () => window.removeEventListener('scroll', controlNavbar);
+
+    }, []);
+
 
     const [isOpen, setIsOpen] = useState(false);
+
     const toggle = () => setIsOpen(!isOpen);
 
     return (
         <div>
-            <Navbar fixed className="navbar navbar-expand-md navbar-dark px-4">
+            <Navbar className="navbar navbar-expand-md navbar-dark px-4">
                 <NavbarBrand to="/">
                 </NavbarBrand>
                 <NavbarToggler onClick={toggle}/>
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="me-auto" navbar>
                         <NavItem>
-                            <NavLink to="/">
+                            <NavLink id="link" to="/">
                                 Home
                             </NavLink>
                         </NavItem>
-
                         <NavItem>
-                            <NavLink to="/about">
+                            <NavLink id="link1" to="/about">
                                 About
                             </NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to="/service">
-                                Services
+                            <NavLink id="link2" to="/service">
+                                Brands
                             </NavLink>
                         </NavItem>
                         <UncontrolledDropdown nav inNavbar>
-                            <DropdownToggle nav caret>
+                            <DropdownToggle id="link3" nav caret>
                                 More
                             </DropdownToggle>
                             <DropdownMenu end id="NavBarMenu">
@@ -74,18 +91,18 @@ export const CustomNavbar = () => {
                             </DropdownMenu>
                         </UncontrolledDropdown>
                     </Nav>
-                    <Nav navbar>
-                        <NavItem>
-                            <NavLink to="/login">
-                                Login
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink to="/signup">
-                                Sign Up
-                            </NavLink>
-                        </NavItem>
-                    </Nav>
+                    {/*<Nav navbar>*/}
+                    {/*    <NavItem>*/}
+                    {/*        <NavLink id="link4" to="/login">*/}
+                    {/*            Login*/}
+                    {/*        </NavLink>*/}
+                    {/*    </NavItem>*/}
+                    {/*    <NavItem>*/}
+                    {/*        <NavLink id="link5" to="/signup">*/}
+                    {/*            Sign Up*/}
+                    {/*        </NavLink>*/}
+                    {/*    </NavItem>*/}
+                    {/*</Nav>*/}
                 </Collapse>
             </Navbar>
         </div>
