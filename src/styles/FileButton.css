@@ -1,0 +1,21 @@
+.file {
+    text-align: center;
+    padding: 3%;
+    border: thin solid #bebebe;
+}
+
+input {
+    display: none;
+}
+
+label {
+    cursor: pointer;
+}
+
+#imageName {
+    color: green;
+}
+
+.bi-camera-fill{
+    font-size: 30px;
+}

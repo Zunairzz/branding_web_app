@@ -1,0 +1,88 @@
+.card {
+    color: white;
+    border: none;
+}
+
+.list .list-name {
+    font-family: "Lato", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+p {
+    font-size: 20px;
+    margin-top: -10px;
+}
+
+.card, .card-img {
+    overflow: hidden;
+    border-radius: 0;
+    transition: 0.1s ease-in-out;
+}
+
+.card:hover, .card-img:hover {
+    cursor: pointer;
+}
+
+.card img {
+    transition: 0.5s ease-in-out;
+}
+
+.card:hover .card-img img {
+    transform: scale(1.09);
+}
+
+/*#img1 img,*/
+/*#img2 img {*/
+/*    width: 30rem;*/
+/*}*/
+/*#img3 img{*/
+/*    width: 70rem;*/
+/*}*/
+
+/*.card-img {*/
+/*    position: relative;*/
+/*}*/
+
+/*!* Define the keyframes for the animation *!*/
+/*@keyframes slide-in {*/
+/*    0% {*/
+/*        opacity: 0;*/
+/*        transform: translateX(-100%);*/
+/*    }*/
+/*    100% {*/
+/*        opacity: 1;*/
+/*        transform: translateX(0);*/
+/*    }*/
+/*}*/
+
+/*!* Apply the animation to the image element *!*/
+/*.image1 {*/
+/*    opacity: 0; !* Start with 0 opacity *!*/
+/*    animation: slide-in 1s ease-out forwards; !* Play the animation once *!*/
+/*}*/
+
+/*!* Apply the hover effect *!*/
+/*.image:hover {*/
+/*    opacity: 0.4; !* Set the opacity to 0.8 on hover *!*/
+/*}*/
+
+/*!* Define the keyframes for the animation *!*/
+/*@keyframes slide-out {*/
+/*    0% {*/
+/*        opacity: 0;*/
+/*        transform: translateX(100%);*/
+/*    }*/
+/*    100% {*/
+/*        opacity: 1;*/
+/*        transform: translateX(0%);*/
+/*    }*/
+/*}*/
+
+/*!* Apply the animation to the image element *!*/
+/*.image2 {*/
+/*    opacity: 0; !* Start with 0 opacity *!*/
+/*    animation: slide-out 1s ease-out forwards; !* Play the animation once *!*/
+/*}*/
+
+

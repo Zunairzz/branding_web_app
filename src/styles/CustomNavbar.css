@@ -1,0 +1,35 @@
+/* Navbar */
+
+.navbar {
+    width: 100%;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 75px;
+    transition: top 0.6s;
+    /*background-color: #f0db4f;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar--item:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+}
+
+.navbar--item:hover::after {
+    visibility: visible;
+    opacity: 1;
+}
+
+#link:hover,
+#link1:hover,
+#link2:hover,
+#link3:hover,
+#link4:hover,
+#link5:hover {
+    cursor: pointer;
+    color: pink;
+}
