@@ -1,0 +1,93 @@
+.about-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.about-page .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.about-page .profile-container .profile-image {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.about-page .profile-container .profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-page .profile-container .profile-details {
+    text-align: center;
+}
+
+.about-page .profile-container .profile-details h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.about-page .profile-container .profile-details h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.about-page .profile-container .profile-details p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    max-width: 30rem;
+}
+
+.about-page .profile-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 10rem;
+    margin-bottom: 1rem;
+}
+
+.about-page .profile-controls button {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.about-page .profile-controls button:hover {
+    color: #444;
+}
+
+.about-page .profile-list {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.about-page .profile-list div {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.about-page .profile-list div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-page .profile-list div.active {
+    transform: scale(1.2);
+}
