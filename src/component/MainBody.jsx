@@ -2,7 +2,6 @@ import {Card, Col, Container, Row} from "reactstrap";
 import "../styles/MainBody.css";
 import image3 from "../images/main_body.jpg";
 import image4 from "../images/cathy-pham-3jAN9InapQI-unsplash.jpg";
-import "../scripts/ImageSlide";
 import {useEffect, useState} from "react";
 
 
