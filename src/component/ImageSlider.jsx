@@ -71,10 +71,6 @@ export const ImageSlider = () => {
                 <div className="card-img">
                     <img src={item.src} alt={item.altText} className="img-fluid" width={15000}/>
                 </div>
-                {/*<div className="text-center paragraph">*/}
-                {/*    <h4>Hi</h4>*/}
-                {/*    <p>This is our product</p>*/}
-                {/*</div>*/}
                 <div className="shade"></div>
             </div>
         )

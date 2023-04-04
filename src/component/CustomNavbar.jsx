@@ -11,7 +11,9 @@ import {
 } from "reactstrap";
 import {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.css';
+import {Rotate as Hamburger} from 'hamburger-react'
 import "../styles/CustomNavbar.css";
+import {Link} from "react-router-dom";
 
 export const CustomNavbar = () => {
     const [show, setShow] = useState(true);
@@ -33,76 +35,39 @@ export const CustomNavbar = () => {
 
     const [isOpen, setIsOpen] = useState(false);
 
-    const toggle = () => setIsOpen(!isOpen);
-
     return (
         <div>
             <Navbar className="navbar navbar-expand-md navbar-dark px-4">
                 <NavbarBrand to="/">
                 </NavbarBrand>
-                <NavbarToggler onClick={toggle}/>
+                {/*<NavbarToggler onClick={toggle}/>*/}
+                <div className="hamburger-icon">
+                    <Hamburger toggled={isOpen} toggle={setIsOpen} direction={"right"} color={"white"}
+                               easing={"ease-out"} duration={0.5} size={22} rounded/>
+                </div>
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="me-auto" navbar>
                         <NavItem>
-                            <NavLink id="link" to="/">
-                                Home
+                            <NavLink>
+                                <Link id="link" to="/">Home</Link>
                             </NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink id="link1" to="/about">
-                                About
+                            <NavLink>
+                                <Link id="link1" to="/about">About</Link>
                             </NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink id="link2" to="/service">
-                                Brands
+                            <NavLink>
+                                <Link id="link2" to="/brands">Brands</Link>
                             </NavLink>
                         </NavItem>
-                        <UncontrolledDropdown nav inNavbar>
-                            <DropdownToggle id="link3" nav caret>
-                                More
-                            </DropdownToggle>
-                            <DropdownMenu end id="NavBarMenu">
-                                <DropdownItem id="drop-down1">
-                                    <i
-                                        className="bi bi-person-lines-fill"
-                                        style={{marginRight: 7}}
-                                    ></i>{" "}
-                                    Contact us
-                                </DropdownItem>
-
-                                <DropdownItem id="drop-down2">
-                                    <i className="bi bi-facebook" style={{marginRight: 7}}></i>{" "}
-                                    Facebook
-                                </DropdownItem>
-                                <DropdownItem divider/>
-                                <DropdownItem id="drop-down3">
-                                    <i className="bi bi-youtube" style={{marginRight: 7}}></i>
-                                    Youtube
-                                </DropdownItem>
-                                <DropdownItem id="drop-down4">
-                                    <i className="bi bi-instagram" style={{marginRight: 7}}></i>
-                                    Instagram
-                                </DropdownItem>
-                                <DropdownItem id="drop-down5">
-                                    <i className="bi bi-linkedin" style={{marginRight: 7}}></i>
-                                    LinkedIn
-                                </DropdownItem>
-                            </DropdownMenu>
-                        </UncontrolledDropdown>
+                        <NavItem>
+                            <NavLink>
+                                <Link id="link3" to="/contact-us">Contact Us</Link>
+                            </NavLink>
+                        </NavItem>
                     </Nav>
-                    {/*<Nav navbar>*/}
-                    {/*    <NavItem>*/}
-                    {/*        <NavLink id="link4" to="/login">*/}
-                    {/*            Login*/}
-                    {/*        </NavLink>*/}
-                    {/*    </NavItem>*/}
-                    {/*    <NavItem>*/}
-                    {/*        <NavLink id="link5" to="/signup">*/}
-                    {/*            Sign Up*/}
-                    {/*        </NavLink>*/}
-                    {/*    </NavItem>*/}
-                    {/*</Nav>*/}
                 </Collapse>
             </Navbar>
         </div>

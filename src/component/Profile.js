@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import React, {useState, useEffect} from 'react';
+import {FaChevronLeft, FaChevronRight} from 'react-icons/fa';
 import "../styles/profile.css";
-
 
 
 const profiles = [
@@ -24,7 +23,7 @@ const profiles = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere justo et nulla interdum, at dignissim mi eleifend. Pellentesque ac commodo nisi. Nam pharetra, quam nec iaculis dapibus, mauris enim varius velit, vitae commodo augue ex vel est.',
     },
 ];
-export const ProfilePage = ()  => {
+export const ProfilePage = () => {
     const [currentProfileIndex, setCurrentProfileIndex] = useState(0);
 
     useEffect(() => {
@@ -38,41 +37,41 @@ export const ProfilePage = ()  => {
     }, [currentProfileIndex]);
 
     return (
-            <div className="about-page">
-                <div className="profile-container">
-                    <div className="profile-image">
-                        <img src={profiles[currentProfileIndex].image} alt="Profile" />
-                    </div>
-                    <div className="profile-details">
-                        <h2>{profiles[currentProfileIndex].name}</h2>
-                        <h3>{profiles[currentProfileIndex].title}</h3>
-                        <p>{profiles[currentProfileIndex].description}</p>
-                    </div>
+        <div className="about-page">
+            <div className="profile-container">
+                <div className="profile-image">
+                    <img src={profiles[currentProfileIndex].image} alt="Profile"/>
                 </div>
-                <div className="profile-controls">
-                    <button onClick={() => setCurrentProfileIndex(
-                        (currentProfileIndex) => (currentProfileIndex - 1 + profiles.length) % profiles.length
-                    )}>
-                        <FaChevronLeft />
-                    </button>
-                    <button onClick={() => setCurrentProfileIndex(
-                        (currentProfileIndex) => (currentProfileIndex + 1) % profiles.length
-                    )}>
-                        <FaChevronRight />
-                    </button>
-                </div>
-                <div className="profile-list">
-                    {profiles.map((profile, index) => (
-                        <div
-                            key={index}
-                            className={index === currentProfileIndex ? 'active' : ''}
-                            onClick={() => setCurrentProfileIndex(index)}
-                        >
-                            <img src={profile.image} alt={profile.name} />
-                        </div>
-                    ))}
+                <div className="profile-details">
+                    <h2>{profiles[currentProfileIndex].name}</h2>
+                    <h3>{profiles[currentProfileIndex].title}</h3>
+                    <p>{profiles[currentProfileIndex].description}</p>
                 </div>
             </div>
+            <div className="profile-controls">
+                <button onClick={() => setCurrentProfileIndex(
+                    (currentProfileIndex) => (currentProfileIndex - 1 + profiles.length) % profiles.length
+                )}>
+                    <FaChevronLeft/>
+                </button>
+                <button onClick={() => setCurrentProfileIndex(
+                    (currentProfileIndex) => (currentProfileIndex + 1) % profiles.length
+                )}>
+                    <FaChevronRight/>
+                </button>
+            </div>
+            <div className="profile-list">
+                {profiles.map((profile, index) => (
+                    <div
+                        key={index}
+                        className={index === currentProfileIndex ? 'active' : ''}
+                        onClick={() => setCurrentProfileIndex(index)}
+                    >
+                        <img src={profile.image} alt={profile.name}/>
+                    </div>
+                ))}
+            </div>
+        </div>
     );
 
 }

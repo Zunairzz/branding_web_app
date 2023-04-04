@@ -1,17 +1,7 @@
 /* Navbar */
 
 .navbar {
-    width: 100%;
-    padding: 10px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 75px;
-    transition: top 0.6s;
-    /*background-color: #f0db4f;*/
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    text-align: center;
 }
 
 .navbar--item:hover {
@@ -22,6 +12,16 @@
 .navbar--item:hover::after {
     visibility: visible;
     opacity: 1;
+}
+
+#link,
+#link1,
+#link2,
+#link3,
+#link4,
+#link5 {
+    text-decoration: none;
+    color: white;
 }
 
 #link:hover,

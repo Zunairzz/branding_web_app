@@ -6,7 +6,6 @@ import {MainBody} from "../component/MainBody";
 export const HomePage = () => {
     return (
         <Base>
-            {/*<h1>This home page</h1>*/}
             <ImageSlider/>
             <Container>
                 <div className="line"></div>
