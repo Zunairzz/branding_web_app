@@ -66,7 +66,7 @@ export const MainBody = () => {
                     <Card className="card">
                         <div className="card-img text-center">
                             <img style={{opacity: 0.8}}
-                                 src={image3}
+                                 src="https://res.cloudinary.com/dyo1h8cbk/image/upload/v1682754601/main_body_gggfmf.jpg"
                                  alt="" width="100%"/>
                         </div>
                         <ul className="list">
@@ -113,7 +113,7 @@ export const MainBody = () => {
                     <Card className="card">
                         <div className="card-img text-center">
                             <img style={{opacity: 0.8}}
-                                 src={image4}
+                                 src="https://res.cloudinary.com/dyo1h8cbk/image/upload/v1682754624/cathy-pham-3jAN9InapQI-unsplash_t9vdzd.jpg"
                                  alt="" width="100%"/>
                         </div>
                         <ul className="list">
