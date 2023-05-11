@@ -7,6 +7,7 @@ import {AboutPage} from "./pages/About";
 import {Brands} from "./pages/Brands";
 import {BrandDetails} from "./component/BrandDetails";
 import {ContactUs} from "./pages/ContactUs";
+import {Images} from "./pages/Images";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                     <Route path="/about" element={<AboutPage/>}></Route>
                     <Route path="/brand/details" element={<BrandDetails/>}></Route>
                     <Route path="/contact-us" element={<ContactUs/>}></Route>
+                    <Route path="/images" element={<Images/>}></Route>
                 </Routes>
             </BrowserRouter>
         </div>
