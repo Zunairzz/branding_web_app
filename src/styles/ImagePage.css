@@ -1,0 +1,12 @@
+.copy, .delete {
+    color: lightgray;
+    transition: 0.5s ease;
+}
+
+.copy:hover {
+    color: #FFD95A;
+}
+
+.delete:hover {
+    color: #FF6969;
+}

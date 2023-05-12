@@ -12,8 +12,11 @@ export const Login = (userDetail) => {
     console.log("service");
     console.log(userDetail);
     // {email: 'amir@gmail.com', password: 'amir123'}
-    const data = {email: 'amir@gmail.com', password: 'amir123'}
+    // const data = {email: 'amir@gmail.com', password: 'amir123'}
     return myAxios.post('/branding/webapp/admin/login', userDetail)
-        .then(response => response.data)
+        .then(response => {
+            localStorage.setItem("user", response.data);
+            return response.data;
+        })
         .catch(error => error);
 }
