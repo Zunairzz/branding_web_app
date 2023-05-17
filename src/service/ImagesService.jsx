@@ -10,6 +10,10 @@ export const getAllImages = () => {
         .then((response) => response.data);
 }
 
+export const getAllImagesFromStorage = () => {
+    return localStorage.getItem("images");
+}
+
 export const deleteImageFromCloud = (publicId) => {
     return myAxios.delete(`/image/cloud/delete/${publicId}`)
         .then((response) => response.data);

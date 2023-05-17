@@ -2,7 +2,7 @@ import {Base} from "../component/Base";
 import {Card, CardBody, CardHeader, CardText, Col, Container, Input, Row} from "reactstrap";
 import {useEffect, useState} from "react";
 import {Image} from "react-bootstrap";
-import {deleteImageFromCloud, getAllImages, uploadImage} from "../service/ImagesService";
+import {deleteImageFromCloud, getAllImages, getAllImagesFromStorage, uploadImage} from "../service/ImagesService";
 import '../styles/ImagePage.css';
 
 export function ImagePage() {
@@ -15,13 +15,7 @@ export function ImagePage() {
     })
 
     useEffect(() => {
-        getAllImages()
-            .then((response) => {
-                console.log(response);
-                setImages(response);
-            }).catch((error) => {
-            console.log(error);
-        })
+        setImages(JSON.parse(getAllImagesFromStorage()));
     }, []);
 
     function deleteImage(publicId) {
@@ -147,7 +141,9 @@ export function ImagePage() {
                                                 <CardText>{img.imageUrl}</CardText>
                                             </div>
                                             <div>
-                                                <i className="bi bi-clipboard copy"></i>
+                                                <i title="Copy URL"
+                                                   onClick={() => navigator.clipboard.writeText(img.imageUrl)}
+                                                   className="bi bi-clipboard copy"></i>
                                                 <i onClick={() => deleteImage("img.publicId")}
                                                    className="bi bi-trash3 delete mx-3"/>
                                             </div>

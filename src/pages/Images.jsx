@@ -21,8 +21,9 @@ export function Images() {
             <Base>
                 <h1>All Images</h1>
                 <Container>
-                    <table className="text-center" style={{background: 'none', backgroundColor: '#2d2d2d', border:'none'}}>
-                        <thead style={{color: "white", backgroundColor:'#151515'}}>
+                    <table className="text-center"
+                           style={{background: 'none', backgroundColor: '#2d2d2d', border: 'none'}}>
+                        <thead style={{color: "white", backgroundColor: '#151515'}}>
                         <tr>
                             <th>Id</th>
                             <th>Image</th>
@@ -41,7 +42,7 @@ export function Images() {
                                              src={img.imageUrl}
                                              alt="image here" width="100px"/>
                                     </td>
-                                    <td><p>{img.imageUrl}</p></td>
+                                    <td><p onClick={() => navigator.clipboard.writeText(im)}>{img.imageUrl}</p></td>
                                     <td>
                                         <Button type={"button"}></Button>
                                     </td>
@@ -56,8 +57,8 @@ export function Images() {
                         <Row>
                             <Col>
                                 <Image style={{boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px'}}
-                                     src="https://res.cloudinary.com/dyo1h8cbk/image/upload/v1683800293/sdcxrkoyhaarvdtzclf0.jpg"
-                                     alt="image here" width="200px"/>
+                                       src="https://res.cloudinary.com/dyo1h8cbk/image/upload/v1683800293/sdcxrkoyhaarvdtzclf0.jpg"
+                                       alt="image here" width="200px"/>
                             </Col>
                             <Col>
                                 <div style={{
@@ -69,6 +70,7 @@ export function Images() {
                                     display: 'flex',
                                     justifyContent: 'space-around'
                                 }}>
+                                    <Button onClick={() => navigator.clipboard.writeText()}></Button>
                                     <p>https://res.cloudinary.com/dyo1h8cbk/image/upload/v1683800293/sdcxrkoyhaarvdtzclf0.jpg</p>
                                     <span></span>
                                     <i className="bi bi-clipboard"></i>

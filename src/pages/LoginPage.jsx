@@ -4,6 +4,7 @@ import {useState} from "react";
 import {Login} from "../service/UserService";
 import "../styles/Style.css";
 import {useNavigate} from "react-router-dom";
+import {getAllImages} from "../service/ImagesService";
 
 export const LoginPage = () => {
 
@@ -33,6 +34,16 @@ export const LoginPage = () => {
             .catch((error) => {
                 console.log(error);
             });
+
+
+        // get all images
+        getAllImages()
+            .then((response) => {
+                console.log(response);
+                localStorage.setItem("images", JSON.stringify(response));
+            }).catch((error) => {
+            console.log(error);
+        })
     }
 
     return (
