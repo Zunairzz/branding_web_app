@@ -1,7 +1,7 @@
 import {Card, Col, Container, Form, FormGroup, Input, Label, Row} from "reactstrap";
 import 'bootstrap/dist/css/bootstrap.css';
-import {useState} from "react";
-import {Login} from "../service/UserService";
+import {useEffect, useState} from "react";
+import {isLoggedIn, Login} from "../service/UserService";
 import "../styles/Style.css";
 import {useNavigate} from "react-router-dom";
 import {getAllImages} from "../service/ImagesService";
@@ -15,6 +15,10 @@ export const LoginPage = () => {
         password: ""
     });
 
+    useEffect(()=>{
+        console.log(isLoggedIn());
+    },[]);
+
     const handleChange = (event, field) => {
         let actualValue = event.target.value;
         setUser({...user, [field]: actualValue});
@@ -26,7 +30,7 @@ export const LoginPage = () => {
             .then((response) => {
                 console.log(response);
                 if (response === 'User found') {
-                    navigate("/add/post");
+                    navigate("/setting");
                 } else {
                     alert('User not found!')
                 }

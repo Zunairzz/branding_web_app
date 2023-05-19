@@ -13,10 +13,13 @@ import {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import {Rotate as Hamburger} from 'hamburger-react'
 import "../styles/CustomNavbar.css";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import {isLoggedIn, LogOut} from "../service/UserService";
 
 export const CustomNavbar = () => {
+    const navigate = useNavigate();
     const [show, setShow] = useState(true);
+    const [login, setLogin] = useState(false);
     const controlNavbar = () => {
         if (window.screenY > 0) {
             setShow(false);
@@ -26,18 +29,21 @@ export const CustomNavbar = () => {
     }
     // new useEffect:
     useEffect(() => {
+        setLogin(isLoggedIn());
         window.addEventListener('scroll', controlNavbar);
-
         return () => window.removeEventListener('scroll', controlNavbar);
-
     }, []);
+
+    function doLogout() {
+        LogOut();
+    }
 
 
     const [isOpen, setIsOpen] = useState(false);
 
     return (
         <div>
-            <Navbar className="navbar navbar-expand-md navbar-dark px-4">
+            <Navbar className="navbar navbar-expand-md navbar-dark px-4 mb-5">
                 <NavbarBrand to="/">
                 </NavbarBrand>
                 {/*<NavbarToggler onClick={toggle}/>*/}
@@ -68,6 +74,26 @@ export const CustomNavbar = () => {
                             </NavLink>
                         </NavItem>
                     </Nav>
+                    {!login && (
+                        <Nav>
+                            <NavItem>
+                                <NavLink>
+                                    <Link id="link3" to="/admin/login">Login</Link>
+                                </NavLink>
+                            </NavItem>
+                        </Nav>
+                    )
+                    }
+                    {login && (
+                        <Nav>
+                            <NavItem>
+                                <NavLink>
+                                    <Link id="link3" to="" onClick={() => doLogout()}>Logout</Link>
+                                </NavLink>
+                            </NavItem>
+                        </Nav>
+                    )
+                    }
                 </Collapse>
             </Navbar>
         </div>

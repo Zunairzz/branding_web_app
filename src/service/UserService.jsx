@@ -1,4 +1,5 @@
 import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
 const BASE_URL = "http://localhost:5007";
 const myAxios = axios.create({
@@ -19,4 +20,19 @@ export const Login = (userDetail) => {
             return response.data;
         })
         .catch(error => error);
+}
+
+export const isLoggedIn = () => {
+    const user = localStorage.getItem("user");
+    if (user != null) {
+        return true;
+    } else {
+        return false;
+    }
+}
+export const LogOut = () => {
+    const navigate = useNavigate();
+    localStorage.removeItem("user");
+    localStorage.removeItem("images");
+    navigate("/");
 }

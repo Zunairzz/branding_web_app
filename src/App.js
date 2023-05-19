@@ -8,6 +8,7 @@ import {Brands} from "./pages/Brands";
 import {BrandDetails} from "./component/BrandDetails";
 import {ContactUs} from "./pages/ContactUs";
 import {ImagePage} from "./pages/ImagePage";
+import {Settings} from "./pages/Settings";
 
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
                     <Route path="/brand/details" element={<BrandDetails/>}></Route>
                     <Route path="/contact-us" element={<ContactUs/>}></Route>
                     <Route path="/images" element={<ImagePage/>}></Route>
+                    <Route path="/setting" element={<Settings/>}></Route>
                 </Routes>
             </BrowserRouter>
         </div>
